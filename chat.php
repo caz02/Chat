@@ -20,7 +20,7 @@ if(!empty($message) && !empty($from)){
 //print messages
 $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
 $items = $db->query("SELECT * FROM `chat` WHERE `id` > " . $start);
-while($row = fetch_assoc()) {
+while($row = $items->fetch_assoc()){
 	$result['items'][] = $row;
 }
 
